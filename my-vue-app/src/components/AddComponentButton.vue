@@ -1,6 +1,8 @@
 <script setup>
 import { ref } from "vue";
 const visible = ref(false);
+// 讓選項變成單選
+const selectedItem = ref("");
 </script>
 
 <template>
