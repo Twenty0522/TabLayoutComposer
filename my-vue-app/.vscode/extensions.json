@@ -1,0 +1,5 @@
+// 建議專案開發時應安裝的 VS Code 擴充套件
+{
+  // 建議的套件 ID （已經安裝）
+  "recommendations": ["Vue.volar"]
+}
