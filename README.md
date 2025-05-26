@@ -9,3 +9,7 @@ A Vue 3 project powered by [Vite](https://vitejs.dev/).
 
 ```bash
 npm install
+npm run dev
+
+npm install primevue primeicons
+
