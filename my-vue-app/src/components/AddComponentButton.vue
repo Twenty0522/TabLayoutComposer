@@ -2,7 +2,7 @@
 import { ref } from "vue";
 const visible = ref(false);
 // 讓選項變成單選
-const selectedItem = ref("");
+const selectedItem = ref([]);
 </script>
 
 <template>
@@ -21,7 +21,7 @@ const selectedItem = ref("");
     >
       <!-- 假資料 -->
       <div class="option-row">
-        <RadioButton
+        <Checkbox
           v-model="selectedItem"
           inputId="item1"
           name="dashboard"
@@ -30,7 +30,7 @@ const selectedItem = ref("");
         <label for="item1">月收支圖表</label>
       </div>
       <div class="option-row">
-        <RadioButton
+        <Checkbox
           v-model="selectedItem"
           inputId="item2"
           name="dashboard"
@@ -39,7 +39,7 @@ const selectedItem = ref("");
         <label for="item2">投資組合分佈</label>
       </div>
       <div class="option-row">
-        <RadioButton
+        <Checkbox
           v-model="selectedItem"
           inputId="item3"
           name="dashboard"
@@ -48,7 +48,7 @@ const selectedItem = ref("");
         <label for="item3">儲蓄進度條</label>
       </div>
       <div class="option-row">
-        <RadioButton
+        <Checkbox
           v-model="selectedItem"
           inputId="item4"
           name="dashboard"
@@ -57,7 +57,7 @@ const selectedItem = ref("");
         <label for="item4">債務追蹤</label>
       </div>
       <div class="option-row">
-        <RadioButton
+        <Checkbox
           v-model="selectedItem"
           inputId="item5"
           name="dashboard"

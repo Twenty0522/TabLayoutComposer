@@ -10,6 +10,8 @@ import draggable from "vuedraggable";
 import Sp1 from "./Splitters/Sp1.vue";
 import Sp2 from "./Splitters/Sp2.vue";
 import Sp3 from "./Splitters/Sp3.vue";
+import DeleteTabBtn from "./DeleteTabBtn.vue";
+import AddTabBtn from "./AddTabBtn.vue";
 
 const tabItems = ref([
   { label: "水平", value: "0", component: Sp1 },
@@ -34,7 +36,7 @@ function addTab() {
   tabItems.value.push({
     label: `新分頁${tabCount}`,
     value: String(tabCount),
-    component: Sp1 // 預設用 Sp1，你可依需求更換
+    component: Sp1, // 預設用 Sp1，你可依需求更換
   });
   activeTab.value = String(tabCount); // 新增後自動切換到新分頁
 }
@@ -54,40 +56,14 @@ function addTab() {
           <template #item="{ element, index }">
             <Tab :value="element.value">
               {{ element.label }}
-              <button
-                class="delete-btn"
-                @click.stop="removeTab(index)"
-                style="
-                  font-size: 10px;
-                  padding: 8px 8px;
-                  background: transparent;
-                  border: none;
-                  color: green;
-                  cursor: pointer;
-                "
-                title="刪除"
-              >
-                ✕
-              </button>
+              <DeleteTabBtn :on-remove="removeTab" :index="index" />
             </Tab>
           </template>
         </draggable>
-        <!-- 新增分頁按鈕 -->
-        <button
-          class="add-tab-btn"
-          @click="addTab"
-          title="新增分頁"
-          style="
-            margin-left: 8px;
-            border: none;
-            border-radius: 4px;
-            padding: 10px 10px;
-            cursor: pointer;
-            font-size: 16px;
-            color:green; "
-        >＋
-        </button>
+
+        <AddTabBtn @add="addTab" />
       </TabList>
+
       <TabPanels>
         <TabPanel
           v-for="item in tabItems"

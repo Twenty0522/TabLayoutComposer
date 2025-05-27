@@ -1,7 +1,6 @@
 <script setup>
 import { ref } from 'vue'
-import Tag from './components/Tag.vue'
-import draggable from 'vuedraggable'
+import Tab from './components/Tab.vue'
 
 const items = ref([
   { id: 1, name: '任務一：整理資料' },
@@ -13,7 +12,7 @@ const items = ref([
 
 <template>
   <p class="T1">個人財務儀表板</p>
-  <Tag />
+  <Tab />
 </template>
 
 <style scoped>
