@@ -13,3 +13,8 @@ npm run dev
 
 npm install primevue primeicons
 
+# 引入 vue draggable 拖拉 tab
+npm install vuedraggable@next
+
+
+

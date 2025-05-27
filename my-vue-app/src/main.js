@@ -16,9 +16,13 @@ import InputText from "primevue/inputtext";
 import Checkbox from 'primevue/checkbox';
 import CheckboxGroup from 'primevue/checkboxgroup';
 import RadioButton from 'primevue/radiobutton';
+
 // PrimeVue 4.x 的元件必須在 main.js 用 app.component 全域註冊
 import Splitter from 'primevue/splitter'
 import SplitterPanel from 'primevue/splitterpanel'
+
+// 引入 Vue Draggable
+import draggable from 'vuedraggable'
 
 
 const app = createApp(App);
@@ -46,3 +50,6 @@ app.component('RadioButton', RadioButton)
 
 // mount 要放最後
 app.mount('#app')
+
+// Vue Draggable
+app.component('draggable', draggable);
